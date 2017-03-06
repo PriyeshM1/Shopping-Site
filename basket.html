@@ -7,9 +7,9 @@
                 $.ajax({
                   url: "/basket/list",
                   context: document.body
-                }).done(function(data) {
+                }).done(function(basket) {
                   var table = $('#basket-list')
-                  data.forEach(function(item, id){
+                  basket.forEach(function(item, id){
                      table.append('<tr><td align="center">' 
                                   + item.product.name + 
                                   '</td><td align="center">'
@@ -30,6 +30,8 @@
                         location = "/basket/removeAll/" + item.product.id
                     });                     
                   });
+                var grandTotal = basket.reduce(function(acc, item){ return acc + item.price * item.quantity }, 0);
+                $('#basketTotal').text(grandTotal);
                 });
             });
         </script>
@@ -49,6 +51,7 @@
                 <tfoot>
                     <tr>
                         <td colspan ="3" align="right"><b>Grand Total</b></td>
+                        <td align="center" id="basketTotal"></td>
                     </tr>
                 </tfoot>
             </table>
@@ -60,6 +63,10 @@
         <br>
         <form action="/basket/clearBasket" method="POST">
             <input type="submit" value="Clear Your Basket"/>
+        </form>
+        <br>
+        <form action="" method="POST">
+            <input type="submit" value="Checkout"/>
         </form>
     </body>
 </html>
