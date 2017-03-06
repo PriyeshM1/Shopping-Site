@@ -73,5 +73,51 @@ basket: [],
     
     toString : function(){
         return JSON.stringify(this.basket);
+    },
+    
+    handle : handle
+}
+
+function handle(req, res, command){
+switch(command[1]){
+        case "list":
+            var data = this.toString();
+            res.setHeader("Content-Type" , "application/json");
+            res.end(data);
+            break;
+        case "addItem":
+            var productId = command[2];
+            var quantity = 1;
+            this.addItem(productId, quantity)
+            res.writeHead(302, {
+               'Location' : "/basket.html" 
+            });
+            res.end();
+            break;
+        case "removeItem":
+            var productId = command[2];
+            var quantity = 1;
+            this.removeItem(productId, quantity)
+            res.writeHead(302, {
+               'Location' : "/basket.html" 
+            });
+            res.end();
+            break;
+        case "removeAll":
+            var productId = command[2];
+            this.removeAll(productId)
+            res.writeHead(302, {
+               'Location' : "/basket.html" 
+            });
+            res.end();
+            break;
+        case "clearBasket":
+            var productId = command[2];
+            this.clearBasket(productId)
+            res.writeHead(302, {
+               'Location' : "/basket.html" 
+            });
+            res.end();
+            break;
     }
 }
