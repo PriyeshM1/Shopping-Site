@@ -30,7 +30,7 @@
                         location = "/basket/removeAll/" + item.product.id
                     });                     
                   });
-                var grandTotal = basket.reduce(function(acc, item){ return acc + item.price * item.quantity }, 0);
+                var grandTotal = basket.reduce(function(acc, item){ return acc + item.price * item.quantity }, 0).toFixed(2);
                 $('#basketTotal').text(grandTotal);
                 });
             });
