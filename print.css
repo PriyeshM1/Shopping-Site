@@ -1,0 +1,5 @@
+@media print {
+    .printHidden {
+        display: none !important;
+    }
+}

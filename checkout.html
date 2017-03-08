@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="print.css" media="print" />
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="./checkoutUpdater.js"></script>
+        <style type="text/css">
+            table.center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>Invoice</h1>
+        
+        <div>
+            <table id="basket-list" style="width:50%" class="center">
+                <tr>
+                    <th>Product</th>
+                    <th>Price per Unit</th> 
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+                <tfoot>
+                    <tr>
+                        <td colspan ="3" align="right"><b>Grand Total</b></td>
+                        <td align="center" id="basketTotal"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <br>
+        <input type="button" value="Print your Invoice" onClick="window.print()" class='printHidden'>
+        <br>
+        <br>
+        <form action="/basket/clearBasketHome" method="POST" class='printHidden'>
+            <input type="submit" value="Home"/>
+        </form>
+    </body>
+</html>

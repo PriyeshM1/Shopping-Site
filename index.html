@@ -4,20 +4,72 @@
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     </head>
     <body>
-        <h1>Console Shop</h1>
+        <h1>Game Store</h1>
         
-        <div>
-            <ul>
-                <li><a href="/basket/addItem/0"/>Playstation 4</a></li>
-                <br>
-                <li><a href="/basket/addItem/1"/>Xbox One</a></li>
-                <br>
-                <li><a href="/basket/addItem/2"/>Wii U</a></li>
-            </ul>
-        </div>
-
+        <table id="basket-list" style="width:100%" border='3'>
+            <tr>
+                <th>Consoles</th>
+                <th>Accesories</th> 
+                <th>Games</th>
+            </tr>
+            <tr>
+                <td>
+                    <br>
+                    <form action="/basket/addItem/0" method="POST">
+                        <input type="submit" value="Playstation 4 Pro"/>
+                    </form>
+                    <br>
+                    <form action="/basket/addItem/1" method="POST">
+                        <input type="submit" value="Xbox One"/>
+                    </form>
+                    <br>
+                    <form action="/basket/addItem/2" method="POST">
+                        <input type="submit" value="Nintendo Switch"/>
+                    </form>
+                </td>
+                <td>
+                    <br>
+                    <form action="/basket/addItem/3" method="POST">
+                        <input type="submit" value="Playstation 4 Controller"/>
+                    </form>
+                    <br>
+                    <form action="/basket/addItem/4" method="POST">
+                        <input type="submit" value="Xbox One"/>
+                    </form>
+                    <br>
+                    <form action="/basket/addItem/5" method="POST">
+                        <input type="submit" value="HDMI Cable"/>
+                    </form>
+                    <br>
+                    <form action="/basket/addItem/6" method="POST">
+                        <input type="submit" value="USB-A to USB-C Cable"/>
+                    </form>
+                </td>
+                <td>
+                    <br>
+                    <form action="/basket/addItem/7" method="POST">
+                        <input type="submit" value="FIFA 17 - PS4"/>
+                    </form>
+                    <br>
+                    <form action="/basket/addItem/8" method="POST">
+                        <input type="submit" value="FIFA 17 - Xbox One"/>
+                    </form>
+                    <br>
+                    <form action="/basket/addItem/9" method="POST">
+                        <input type="submit" value="Call of Duty - PS4"/>
+                    </form>
+                    <br>
+                    <form action="/basket/addItem/10" method="POST">
+                        <input type="submit" value="Call of Duty - Xbox One"/>
+                    </form>
+                    <br>
+                    <form action="/basket/addItem/11" method="POST">
+                        <input type="submit" value="Zelda - Nintendo Switch"/>
+                    </form>
+                </td>
+            </tr>
+        </table>
         <br>
-
         <form action="/basket.html" method="POST">
             <input type="submit" value="View My Basket"/>
         </form>
