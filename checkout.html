@@ -2,10 +2,10 @@
     <head>
         <title></title>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-        <script src="./basketUpdater.js"></script>
+        <script src="./checkoutUpdater.js"></script>
     </head>
     <body>
-        <h1>Your Basket</h1>
+        <h1>Invoice</h1>
         
         <div>
             <table id="basket-list" style="width:100%" border='3'>
@@ -14,7 +14,6 @@
                     <th>Price per Unit</th> 
                     <th>Quantity</th>
                     <th>Total</th>
-                    <th>Update</th>
                 </tr>
                 <tfoot>
                     <tr>
@@ -25,16 +24,8 @@
             </table>
         </div>
         <br>
-        <form action="index.html" method="POST">
-            <input type="submit" value="Continue Shopping"/>
-        </form>
-        <br>
-        <form action="/basket/clearBasket" method="POST">
-            <input type="submit" value="Clear Your Basket"/>
-        </form>
-        <br>
-        <form action="checkout.html" method="POST">
-            <input type="submit" value="Checkout"/>
+        <form action="" method="POST">
+            <input type="submit" value="Print"/>
         </form>
     </body>
 </html>

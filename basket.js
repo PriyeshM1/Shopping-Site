@@ -6,9 +6,9 @@ function Product(id, name, price) {
 
 
 var products = [
-    new Product("0", "Playstation 4", 199.99),
-    new Product("1", "XBox One", 249.99),
-    new Product("2", "Wii U", 149.99),
+    new Product("0", "PlayStation 4 Pro", 349.99),
+    new Product("1", "Xbox One", 224.99),
+    new Product("2", "Nintendo Switch", 274.99),
     ]; 
 
 function Item (product, price, quantity) {

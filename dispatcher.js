@@ -18,7 +18,6 @@ function dispatch(req, res){
     }
 }
 
-
 function render(path, req, res){
     fs.readFile(path, function (error, data){ 
         if (error){
@@ -30,9 +29,6 @@ function render(path, req, res){
         }
     });
 }
-
-function renderIndex(req, res, command){  render("./index.html", req, res);  }
-function renderBasket(req, res, command){  render("./basket.html", req, res);  }
 
 module.exports.dispatch = dispatch
     
