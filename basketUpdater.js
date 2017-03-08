@@ -27,7 +27,7 @@ $(document).ready(function(){
       });
     var grandTotal = basket.reduce(function(acc, item){ return acc + item.price * item.quantity }, 0).toFixed(2);
     if (grandTotal > 0) {
-        $('#basketTotal').text("£" + grandTotal);
+        $('#basketTotal').text("£ " + grandTotal);
     } else {
         ""
     }
