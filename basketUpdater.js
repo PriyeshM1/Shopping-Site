@@ -26,6 +26,10 @@ $(document).ready(function(){
         });                     
       });
     var grandTotal = basket.reduce(function(acc, item){ return acc + item.price * item.quantity }, 0).toFixed(2);
-    $('#basketTotal').text(grandTotal);
+    if (grandTotal > 0) {
+        $('#basketTotal').text(grandTotal);
+    } else {
+        ""
+    }
     });
 });
