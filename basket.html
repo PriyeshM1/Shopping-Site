@@ -1,76 +1,3 @@
-<<<<<<< HEAD
-<html>
-    <head>
-        <title></title>
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-        <script>
-            $(document).ready(function(){
-                $.ajax({
-                  url: "/basket/list",
-                  context: document.body
-                }).done(function(basket) {
-                  var table = $('#basket-list')
-                  basket.forEach(function(item, id){
-                     table.append('<tr><td align="center">' 
-                                  + item.product.name + 
-                                  '</td><td align="center">'
-                                  + item.price + 
-                                  '</td><td align="center">' 
-                                  + item.quantity + 
-                                  '</td><td align="center">' 
-                                  + (item.price*item.quantity).toFixed(2) +
-                                  '</td><td align="center"> <button id="addItem' + id  +'">+</button> <button id="removeItem' + id  +'">-</button> <button id="removeAll' + id  +'">X</button> </td></tr>'
-                    );
-                    $("#addItem" + id).click(function(){
-                        location = "/basket/addItem/" + item.product.id
-                    });
-                    $("#removeItem" + id).click(function(){
-                        location = "/basket/removeItem/" + item.product.id
-                    });
-                    $("#removeAll" + id).click(function(){
-                        location = "/basket/removeAll/" + item.product.id
-                    });                     
-                  });
-                var grandTotal = basket.reduce(function(acc, item){ return acc + item.price * item.quantity }, 0);
-                $('#basketTotal').text(grandTotal);
-                });
-            });
-        </script>
-    </head>
-    <body>
-        <h1>Your Basket</h1>
-        
-        <div>
-            <table id="basket-list" style="width:100%" border='3'>
-                <tr>
-                    <th>Product</th>
-                    <th>Price per Unit</th> 
-                    <th>Quantity</th>
-                    <th>Total</th>
-                    <th>Update</th>
-                </tr>
-                <tfoot>
-                    <tr>
-                        <td colspan ="3" align="right"><b>Grand Total</b></td>
-                        <td align="center" id="basketTotal"></td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
-        <br>
-        <form action="index.html" method="POST">
-            <input type="submit" value="Continue Shopping"/>
-        </form>
-        <br>
-        <form action="/basket/clearBasket" method="POST">
-            <input type="submit" value="Clear Your Basket"/>
-        </form>
-        <br>
-        <form action="" method="POST">
-            <input type="submit" value="Checkout"/>
-        </form>
-    </body>
-=======
 <html>
     <head>
         <title></title>
@@ -110,5 +37,4 @@
             <input type="submit" value="Checkout"/>
         </form>
     </body>
->>>>>>> dispatcher
 </html>
